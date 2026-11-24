@@ -1,20 +1,19 @@
 # FSEA-Net
-# FSEA-Net core modules
 
-This repository contains the `CFE` (adaptive frequency extraction) and `HFDSF` (high–low frequency interaction guidance) PyTorch modules used in the FSEA-Net study. 
-## Files
+This repository provides the CFE and HFDSF modules and the image identifiers for the USE and Tryp train, validation, and test splits used in the study.
 
-- `CFE.py` — multi-scale frequency evidence construction and allocation.
-- `HFDSF.py` — structural–semantic interaction and optional feature-map visualization.
+## Contents
 
-## Datasets used in the study
+- [`FSEA-Net-code-release/CFE.py`](FSEA-Net-code-release/CFE.py) and [`FSEA-Net-code-release/HFDSF.py`](FSEA-Net-code-release/HFDSF.py): core modules.
+- [`split_ids/USE/`](split_ids/USE/): 4,256 training, 852 validation, and 268 test image filenames.
+- [`split_ids/Tryp/`](split_ids/Tryp/): 1,893 training, 610 validation, and 612 test image filenames.
 
-- **USE:** [Urinary Sediment Dataset](https://github.com/174614361/Urinary-Sediment-Dataset). The dataset page documents 4,256 training, 852 validation, and 268 test images.
-- **Tryp:** [Figshare dataset](https://doi.org/10.6084/m9.figshare.22825787). Its published partitions contain 1,893 training, 610 validation, and 612 test positive images.
-- **Urised11:** Described in [Wang et al., *Applied Sciences* 2023](https://doi.org/10.3390/app132111676), which reports 5,891 training and 1,473 evaluation images. The publication states that the data are available from the corresponding author on reasonable request; **this citation is not a public download link**.
+Each split file contains one `.jpg` filename per line, sorted alphabetically. These lists record the dataset assignment used in the study; they do not contain images or annotation files. Filenames can be matched to the corresponding images by basename.
 
-The above links identify the original dataset sources. They do not by themselves document the exact image IDs or any modified splits used for the present study.
+## Original dataset sources
 
-## Reproducibility scope
+- USE: [Urinary Sediment Dataset](https://github.com/174614361/Urinary-Sediment-Dataset).
+- Tryp: [Figshare dataset](https://doi.org/10.6084/m9.figshare.22825787).
+- Urised11: [Wang et al., *Applied Sciences* 2023](https://doi.org/10.3390/app132111676). The source publication describes the access route; Urised11 images and split identifiers are not distributed here.
 
-Reproduction of the full FSEA-Net results additionally requires the model configuration, IPAM implementation, training and evaluation settings, exact split identifiers, checkpoint-selection rule, and dataset access. No raw image data are redistributed here.
+For the images, annotations, and applicable reuse terms, consult the original dataset sources. No source images or annotations are redistributed in this repository.
